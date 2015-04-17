@@ -1,0 +1,20 @@
+html {
+
+}
+
+img {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	opacity: 0.5;
+	z-index: 0;
+}
+
+h1 {
+	float: right;
+}
+
+div {
+	border: 3px solid black;
+	float: right;
+}
