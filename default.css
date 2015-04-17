@@ -28,6 +28,7 @@ div {
 	border: 2px solid black;
 	width: 28.5em;
 	background-color: white;
+	/*border-radius: 5px;*/
 }
 
 div p {
@@ -83,4 +84,8 @@ a:hover {
 
 #footer {
 	margin-left: 44%;
+}
+
+div table {
+	margin-left: 1em;
 }
