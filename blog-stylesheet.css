@@ -63,7 +63,7 @@ td {
 	margin: 1em 0 1em;
 }
 
-#main {
+.main {
 	display: block;
 	position: relative;
 	border: 2px solid black;
@@ -73,13 +73,13 @@ td {
 	box-shadow: 3px 3px 5px black;
 }
 
-#title {
+.title {
 	position: relative;
 	top: -2.5em;	
 	margin-left: 2em;
 }
 
-#sidebarcontainer {
+.sidebarcontainer {
 	display: block;
 	left: 50%;
 	position: fixed;
@@ -89,7 +89,7 @@ td {
 
 }
 
-#sidebar {
+.sidebar {
 	margin-left: 285px;
 	border: 2px solid black;
 	width: 7em;
@@ -98,10 +98,10 @@ td {
 	box-shadow: 3px 3px 5px black;
 }
 
-#post {
+.post {
 }
 
-#line {
+.line {
 	border-bottom: 2px solid black;
 	display: block;
 	margin-left: 9em;
