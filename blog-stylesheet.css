@@ -1,0 +1,84 @@
+body * {
+	/*border: 1px solid black;*/
+}
+
+a {
+	color: black;
+	text-decoration: none;
+}
+
+a:hover {
+	color:red;
+	}
+
+img {
+	height: 100px;
+	width: 100px;
+	border: 1px solid black;
+	margin-left: 1.5em;
+	margin-top: 1.5em;
+}
+
+body > h1 {
+	font-size: 4em;
+	text-align: center;
+}
+
+div {
+	display: inline-block;
+}
+
+div h1 {
+	margin-bottom: -.5em;
+}
+
+h2 {
+
+}
+
+h4 {
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+
+p {
+	margin-left: 1.5em;
+	margin-right: 1.5em;
+}
+
+table {
+	margin: auto;
+}
+
+td {
+	display: inline-block;
+	margin: 6em 0 0 0;
+}
+
+#main {
+	border: 1px solid black;
+	margin-right: 10em;
+	margin-left: 2.5em;
+	margin-bottom: 2em;
+}
+
+#title {
+	position: relative;
+	top: -2.5em;	
+	margin-left: 2em;
+}
+
+#sidebar {
+	border: 1px solid black;
+	right: 2.5em;
+	width: 7em;
+	top: 10.03em;
+	bottom: 2.46em;
+	position: fixed;
+	text-align: center;
+}
+
+#post {
+	margin-top: -1em;
+}
