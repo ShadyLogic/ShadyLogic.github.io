@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ShadyBlogic</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="blog-stylesheet.css">
+
+</head>
+
+<body>
+
+  <h1>Shady Blogic</h1>
+
+  <div class="sidebarcontainer">
+    <div class="sidebar">
+      <table>
+          <tr><td><a href="index.html">HOME</a></td></tr>
+          <tr><td><a href="#">ABOUT</a></td></tr>
+          <tr><td><a href="#">PROJECTS</a></td></tr>
+          <tr><td><a href="blog/index.html">BLOG</a></td></tr>
+          <tr><td><a href="#">CONTACTS</a></td></tr>
+      </table>
+    </div>
+  </div>
+
+<!-- NEW BLOG POSTS START HERE -->
+
+  <div class="main">
+
+    <div>
+      <img src="../imgs/mug-avatar.png" alt="My beautiful face">
+      <h4>04/19/2015</h4>
+    </div>
+
+    <div class="title">
+      <h1>Assume the (CSS) Position</h1>
+      <h2>Technical Blog - Week 2</h2>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="post">
+
+      <p>
+         My site is live! If you're reading this then you already know, because you're on it. Boy is CSS a pain in the butt. I've never used CSS or HTML before, and one week is a short amount of time to learn a whole new language. I think I did a pretty good job though. Anyway, I'm here to talk to you about CSS positioning, the only part of the language that gave me a headache. Let's begin!
+      </p>
+      <p>
+         The position property in CSS is where we define how our HTML object should be displayed. The four positions available to us are static, relative, absolute, and fixed. Static is the default position, so if you want an object to be static you don't need to define anything. Relative is like static, but when objects are given a relative position it allows us to move them around relative to where they would have been without any formatting. For example, using relative positioning I can move an image 20px down, or 20em to the right, or 25% of the screen width to the left. I do this by first setting [position: relative;], then using the [top: 20px;], [right: 20em;] and [left: 25%;] properties respectively. Relative positioning is pretty simple, but it's important to remember that relatively positioned objects affect the placement of other objects. For instance, if you have a bunch of objects stacked on top of each other, changing the position of the top object will affect all those below it.
+      </p>
+      <p>
+         The next position we'll talk about is absolute positioning. I haven't actually used this one much, but it allows objects to be arranged using absolute terms, without relying on other objects to determine their position. If I want to put a header at the top of the page I can use absolute positioning and not have to worry about it rearranging my other objects. Absolutely placed objects are still positioned relative to their parent container. Let's say that I have a list inside of a div container. If the div container is centered on the page then the list inside the div will move with it. If I move the list around with up, down, left, and right it will move relative to the centered div. The movement works the same way as relative positioning, but absolute objects are removed from "normal flow", and won't affect other objects.
+      </p>
+      <p>
+         The last position is fixed. This one was a real pain to wrap my head around, but is definitely my favorite. Objects with a fixed position are "stuck" to the browser window, and don't move or scroll like the other objects. Fixed objects are removed "normal flow" just like absolute objects, and are positioned in relation to their parent objects in the same way. In fact, they are almost identical to absolute objects except that they don't scroll. On this blog page you can see the navbar on the right is a fixed object. As you scroll down the page the navbar comes with you.
+      </p>
+      <p>
+         It was tricky trying to get the navbar to be centered, but offset to the right. I could get it centered using [margin: auto;], but once there any attempts to offset wouldn't work. After some research I discovered a solution. I put the navbar object inside of a div, and centered the div with [margin: auto;]. Then I moved the navbar to the right of it's parent div with [left: #px]. So easy! Although it was sometimes quite frustrating I really feel like I'm getting the hang of CSS. I look forward to adding new pages and improving my site!
+      </p>
+
+    </div>
+
+  </div>
+
+  <br/>
+
+<!-- NEW BLOG POSTS END HERE -->
+
+</body>
+</html>
