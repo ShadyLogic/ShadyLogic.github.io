@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ShadyBlogic</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="blog-stylesheet.css">
+
+</head>
+
+<body>
+
+  <h1>Shady Blogic</h1>
+
+  <div class="sidebarcontainer">
+    <div class="sidebar">
+      <table>
+          <tr><td><a href="../index.html">HOME</a></td></tr>
+          <tr><td><a href="#">ABOUT</a></td></tr>
+          <tr><td><a href="#">PROJECTS</a></td></tr>
+          <tr><td><a href="index.html">BLOG</a></td></tr>
+          <tr><td><a href="#">CONTACTS</a></td></tr>
+      </table>
+    </div>
+  </div>
+
+<!-- NEW BLOG POSTS START HERE -->
+
+  <div class="main">
+
+    <div>
+      <img src="imgs/mug-avatar.png" alt="My beautiful face">
+      <h4>04/19/2015</h4>
+    </div>
+
+    <div class="title">
+      <h1>Arrays and Hashes</h1>
+      <h2>Technical Blog - Week 3</h2>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="post">
+
+      <p>
+         Hello friends! I we started learning Ruby this week, very basic stuff but you have to start somewhere so why not start at the beginning? Today we'll be talking about arrays and hashes, two systems Ruby uses to store collections of objects. Let's begin!
+      </p>
+      <p>
+         Arrays and hashes are very similar, but are used in different ways. As with everything in Ruby, and array and a hash are both objects. Both are used to store collections of objects, be that integers, strings, or even other arrays and hashes! The main difference between them is that arrays are ordered collections and hashes are unordered. When you assign a value in an array, that is, give it something to hold on to, you define where in the array the value should go. This is called an index, and it looks like this: array[3]. Because arrays start counting at 0 instead of 1, array[3] is the fourth item in the array. There are many methods that move items in the array around, but we always reference items in the array by refering to their index.
+      <p>
+         A hash, on the other hand, can store any value like an array can, but instead of giving the value an index we give it a key. A key is like an index, but does not have any inherent order in the hash. For example, if I wanted to store the value 'Obama' in a hash I might give it the key 'President'. Thus, I would be able to retrieve that value from the hash by calling hash['President']. It can be helpful to think of a hash like a dictionary, with the key being a word or symbol that points to a definition, the value. Key => value. In fact, this is exactly how we assign keys and values to a hash, with the command hash = {key => value}. Cool, huh?
+      </p>
+
+    </div>
+
+  </div>
+
+  <br/>
+
+<!-- NEW BLOG POSTS END HERE -->
+
+</body>
+</html>
