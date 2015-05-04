@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ShadyBlogic</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="blog-stylesheet.css">
+
+</head>
+
+<body>
+
+  <h1>Shady Blogic</h1>
+
+  <div class="sidebarcontainer">
+    <div class="sidebar">
+      <table>
+          <tr><td><a href="../index.html">HOME</a></td></tr>
+          <tr><td><a href="#">ABOUT</a></td></tr>
+          <tr><td><a href="#">PROJECTS</a></td></tr>
+          <tr><td><a href="index.html">BLOG</a></td></tr>
+          <tr><td><a href="#">CONTACTS</a></td></tr>
+      </table>
+    </div>
+  </div>
+
+<!-- NEW BLOG POSTS START HERE -->
+
+  <div class="main">
+
+    <div>
+      <img src="../imgs/mug-avatar.png" alt="My beautiful face">
+      <h4>05/03/2015</h4> 					<!--ADD DATE-->
+    </div>
+
+    <div class="title">
+      <h1>Collecting Maps</h1>					<!--ADD TITLE-->
+      <h2>Technical Blog - Week 4</h2>		<!--ADD SUBTITLE-->
+    </div>
+
+    <div class="line"></div>
+
+    <div class="post">
+
+      <p>
+      Ruby methods! There are so many! And they all do such wonderful things. But did you know that some of them are exactly the same? Sneaky methods, making us think there are more of them than there really are. Two such offenders are the map and collect methods. These two tricksy methods do exactly the same thing, so this week we're going to learn about them and kill two birds with one method. Let's begin!
+      </p>
+      <p>
+      Map and collect are methods for the Enumerable class in Ruby. What is an enumerable? I'm glad you asked, because I just had to look it up. An enumerable is an object (like everything in Ruby) that contains a collection of other objects that can be counted through one by one. When you ask Ruby to iterate through a collection, such as an array or a hash, often it will output an enumerator. This usually happens when you don't pass the iteration a block argument, or "something to do". In essense, you're just asking Ruby to count everything in the array/hash, so it does and outputs an enumerator. For example, if you ran the method <b>array.each</b> without any block arguments Ruby would show you each element of array.
+      </p>
+      <p>
+      What does this have to do with map/collect? Well, map/collect are a method which asks Ruby to iterate through an enumarable (array, hash, range). When based a block argument map/collect runs the block on each element and outputs an array. This allows you to do operations like multiply every number in a range by itself and output an array. Map/collect are very similar to each; where map/collect return an array after running the block on each element, each runs the block on each element and returns another enumerable! 
+      </p>
+
+    </div>
+
+  </div>
+
+  <br/>
+
+<!-- NEW BLOG POSTS END HERE -->
+
+</body>
+</html>
