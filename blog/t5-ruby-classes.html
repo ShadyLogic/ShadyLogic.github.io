@@ -45,7 +45,7 @@
 		-	Good afternoon class, yes, come in, sit down. Today we will be learning about classes. That's right, it's the classes class. As we all know, literally EVERYTHING in Ruby is an object. The main purpose of a class is to be a template for making objects, containing attributes and behaviors that are defined when creating the object. They are the blueprint, the prototype, the Platonic Ideal of objects. If objects were alive their class would be their DNA. In order to demonstrate how apropos this analogy is, we're going to build a dog in Ruby. Let's begin!
 	</p>
 	<p>
-		-	We'll start by defining a class, like this: <b>class Dog</b>. That was easy, wasn't it? If we wanted to we could create a dog right now by typing <b>Rover = Dog.new</b>. That would created a Dog object called Rover, but Rover would be more of a meaningless blob than a real dog. Within the Dog class we'll start defining some behaviors that dogs have using methods. In the life of a real dog, the very first thing that it has to do is <i>become a dog</i>. This is commonly refered to as "being born", but in Ruby we call it "initialization". Inside of our Dog class we'll type <b>def initialize</b> to create an initialization method, and within this method we'll add <b>@legs = 4</b>. There, now every dog we build will be born with 4 @legs. At this point our code looks something like this:
+		-	We'll start by defining a class, like this: <b>class Dog</b>. That was easy, wasn't it? If we wanted to we could create a dog right now by typing <b>>Rover = Dog.new</b>. That would created a Dog object called Rover, but Rover would be more of a meaningless blob than a real dog. Within the Dog class we'll start defining some behaviors that dogs have using methods. In the life of a real dog, the very first thing that it has to do is <i>become a dog</i>. This is commonly refered to as "being born", but in Ruby we call it "initialization". Inside of our Dog class we'll type <b>def initialize</b> to create an initialization method, and within this method we'll add <b>@legs = 4</b>. There, now every dog we build will be born with 4 @legs. At this point our code looks something like this:
 	</p>
 	<p><b>
 	class Dog</br></br>
@@ -55,7 +55,7 @@
 	end</br>	
 	</b></p>
 	  <p>
-	  	-	Let's add another method so our dog can bark! We'll do that with a simple <b>def bark</b>. What should our dog say? Well, at the moment he only consists of a set of 4 @legs and nothing else, so why don't we have him tell us how many legs he has. Inside the bark method we'll put <b>puts "I have #{@legs} legs!"</b>. Wow, we just made a talking dog! Sure, he's just a sack of legs, but we can make him more. Let's add some more features to our dog:
+	  	-	Let's add another method so our dog can bark! We'll do that with a simple <b>def bark</b>. What should our dog say? Well, at the moment he only consists of a set of 4 @legs and nothing else, so why don't we have him tell us how many legs he has. Inside the bark method we'll put <b>"I have #{@legs} legs!"</b>. Wow, we just made a talking dog! Sure, he's just a sack of legs, but we can make him more. Let's add some more features to our dog:
 	  </p>
 	<p><b>
 	class Dog</br></br>
@@ -70,7 +70,7 @@
 	end</br>	
 	</b></p>
 	  <p>
-	  	-	Now any dogs we make will have 3 attributes: legs, a breed, and the state of being alive or not. Because we have defined it so in the initialize method, every dog will be a 4-legged living beagle. At this point we have accomplished our goal and can successfully make a dog. By typing <b>Snoopy = Dog.new</b> we will create a Dog object named Snoopy and if we add Snoopy.bark we will get the message <b>"I have 4 legs!"</b>. What more could you ask for in a dog?
+	  	-	Now any dogs we make will have 3 attributes: legs, a breed, and the state of being alive or not. Because we have defined it so in the initialize method, every dog will be a 4-legged living beagle. At this point we have accomplished our goal and can successfully make a dog. By typing <b>>Snoopy = Dog.new</b> we will create a Dog object named Snoopy and if we add <b>>Snoopy.bark</b> we will get the message <b>=>"I have 4 legs!"</b>. What more could you ask for in a dog?
       </p>
       	<p><b>
 	class Dog</br></br>
@@ -89,7 +89,7 @@
 	end</br>	
 	</b></p>
 	  <p>
-	  -	As all dogs are born, so all dogs must die. If being born is the first behavior a dog ever performs then dying is the last. Now a command of <b>Snoopy.die</b> will elicit a reply of <b>"I am dead :("</b>. You make think this is cruel, but remember that Dog objects are not real dogs. Even though Snoopy is no longer alive, if you ask him to bark he'll still tell you have many legs he has.
+	  -	As all dogs are born, so all dogs must die. If being born is the first behavior a dog ever performs then dying is the last. Now a command of <b>>Snoopy.die</b> will elicit a reply of <b>=>"I am dead :("</b>. You make think this is cruel, but remember that Dog objects are not real dogs. Even though Snoopy is no longer alive, if you ask him to bark he'll still tell you have many legs he has.
       <p>
 	<p><b>
 	>Snoopy = Dog.new</br></br>
