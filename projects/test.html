@@ -1,0 +1,33 @@
+<p style="text-align:center">
+	<img src="../imgs/mug-avatar.png" style="position:relative; width:200px; height:200px">
+</p>
+
+<script>
+	var face = document.querySelector("img");
+	var angle = 0, lastTime = null;
+	function animate(time){
+		if (lastTime != null)
+			angle += (time - lastTime) * 0.003;
+		lastTime = time;
+		face.style.top = 350+(Math.sin(angle) *200) + "px";
+		face.style.left = (Math.cos(angle) *200) + "px";
+		requestAnimationFrame(animate);
+	}
+	requestAnimationFrame(animate)
+</script>
+
+<p style="text-align:center; position: relative; top:220;">
+	<button>Click Me!</button>
+</p>
+<script>
+	addEventListener("click", function(event){
+		if (event.target.nodeName == "BUTTON")
+			alert("YOU CLICKED IT LOLOLOL");
+	});
+</script>
+<script>
+	addEventListener("keydown", function(event){
+		if (event.keyCode == 86)
+			alert("YOU PUSHED THE V KEY");
+		})
+</script>
