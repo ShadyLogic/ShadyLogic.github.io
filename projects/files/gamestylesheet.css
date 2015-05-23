@@ -1,0 +1,24 @@
+div {
+	background-color: black;
+	width: 10px;
+	height: 10px;
+	position: absolute;
+}
+
+.snake {
+	background-color: green;
+}
+
+.wall {
+	background-color: white;
+	width: 500px;
+	height: 500px;
+	top: 100px;
+	left: 100px;
+	border: 10px solid black;
+	z-index: -5;
+}
+
+.food {
+	background-color: red;
+}
