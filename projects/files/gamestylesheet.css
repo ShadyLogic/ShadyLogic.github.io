@@ -1,12 +1,42 @@
-div {
+/*div {
 	background-color: black;
 	width: 10px;
 	height: 10px;
 	position: absolute;
+}*/
+
+#rules{
+	position: absolute;
+	top: 620px;
+	left: 150px;
+}
+
+p{
+	/*top: 700px;*/
+	text-align: center;
+	position: relative;
+}
+
+#foodText{
+	top: 50px;
+	left: 200px;
+	position: absolute;
+	font-weight: bold;
+}
+
+#scoreText{
+	top: 50px;
+	left: 400px;
+	position: absolute;
+	font-weight: bold;
 }
 
 .snake {
 	background-color: green;
+	top: -50px;
+	width: 10px;
+	height: 10px;
+	position: absolute;
 }
 
 .wall {
@@ -17,8 +47,13 @@ div {
 	left: 100px;
 	border: 10px solid black;
 	z-index: -5;
+	position: absolute;
 }
 
 .food {
 	background-color: red;
+	top: -50px;
+	width: 10px;
+	height: 10px;
+	position: absolute;
 }
