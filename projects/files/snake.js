@@ -1,69 +1,105 @@
-var xSpeed = 0, ySpeed = 0.1, snakeX = 36, snakeY = 37, speedMod = 1;
-var totalScore = 0, foodScore = 1000;
-var foodX = 110 + (Math.floor((Math.random()*50))*10);
-var foodY = 110 + (Math.floor((Math.random()*50))*10);
+var totalScore = 0;
 var foodText = document.getElementById("foodText");
 var scoreText = document.getElementById("scoreText");
-var snake = document.querySelector("div.snake");
-var food = document.querySelector("div.food");
 var run = false;
 
-food.style.top = foodY + "px";
-food.style.left = foodX + "px";
-snake.style.top = (Math.floor(snakeY)*10) + "px";
-snake.style.left = (Math.floor(snakeX)*10) + "px";
+var snake = {
+	domElement : document.querySelector("div.snake"),
+	posx : 36,
+	posy : 37,
+	xSpeed : 0,
+	ySpeed : 0.1,
+	speedMod : 1
+}
+
+var food = {
+	domElement : document.querySelector("div.food"),
+	posx : 235,
+	posy : 77,
+	pointValue : 1000,
+	newPosition : function(){
+		food.posx = 110 + (Math.floor((Math.random()*50))*10);
+		food.posy = 110 + (Math.floor((Math.random()*50))*10);
+	}
+}
+
+renderGraphics();
+food.newPosition();
 
 addEventListener("keydown", function(event){
-		if (event.keyCode == 37){
-			xSpeed = -0.1*speedMod;
-			ySpeed = 0;}
-		if (event.keyCode == 38){
-			xSpeed = 0;
-			ySpeed = -0.1*speedMod;}
-		if (event.keyCode == 39){
-			xSpeed = 0.1*speedMod;
-			ySpeed = 0;}
-		if (event.keyCode == 40){
-			xSpeed = 0;
-			ySpeed = 0.1*speedMod;}
-		if (event.keyCode == 32){
-			run = !run
-			requestAnimationFrame(animate);}
+	if (event.keyCode == 37){
+		snake.xSpeed = -0.1*snake.speedMod;
+		snake.ySpeed = 0;}
+	if (event.keyCode == 38){
+		snake.xSpeed = 0;
+		snake.ySpeed = -0.1*snake.speedMod;}
+	if (event.keyCode == 39){
+		snake.xSpeed = 0.1*snake.speedMod;
+		snake.ySpeed = 0;}
+	if (event.keyCode == 40){
+		snake.xSpeed = 0;
+		snake.ySpeed = 0.1*snake.speedMod;}
+	if (event.keyCode == 32){
+		run = !run
+		requestAnimationFrame(gameClock);}
 })
 
-function animate(){
-		foodText.textContent = "Food: "+foodScore;
-		scoreText.textContent = "Score: "+totalScore;
-		snakeX += xSpeed;
-		snakeY += ySpeed;
-		snake.style.top = (Math.floor(snakeY)*10) + "px";
-		snake.style.left = (Math.floor(snakeX)*10) + "px";
-		food.style.top = foodY + "px";
-		food.style.left = foodX + "px";
-		if (snakeX < 11 || snakeY < 11 || snakeX > 61 || snakeY > 61 || foodScore <= 0){
-			alert("FINAL SCORE: " + totalScore);
-			newGame();}
-		if ((Math.floor(snakeX)*10) == foodX && (Math.floor(snakeY)*10) == foodY){
-			foodX = 110 + (Math.floor((Math.random()*50))*10);
-			foodY = 110 + (Math.floor((Math.random()*50))*10);
-			speedMod += 0.1;
-			totalScore += foodScore;
-			foodScore = 1000;}
-		if (run == true)
-			requestAnimationFrame(animate);
-		foodScore --;
+function gameClock(){
+	foodDecay();
+	updateSnakePosition();
+	renderGraphics();
+	gameLogic();
+	if (run == true)
+		requestAnimationFrame(gameClock);
 
 }
 
+function foodDecay(){
+	food.pointValue --;
+}
+
+function updateSnakePosition(){
+	snake.posx += snake.xSpeed;
+	snake.posy += snake.ySpeed;
+}
+
+function renderGraphics(){
+	snake.domElement.style.top = (Math.floor(snake.posy)*10) + "px";
+	snake.domElement.style.left = (Math.floor(snake.posx)*10) + "px";
+	food.domElement.style.top = food.posy + "px";
+	food.domElement.style.left = food.posx + "px";
+	foodText.textContent = "Food: "+food.pointValue;
+	scoreText.textContent = "Score: "+totalScore;
+}
+
+function gameLogic(){
+	if (snake.posx < 11 || snake.posy < 11 || snake.posx > 61 || snake.posy > 61 || food.pointValue <= 0)
+		die();
+	if ((Math.floor(snake.posx)*10) == food.posx && (Math.floor(snake.posy)*10) == food.posy){
+		eatFood();
+}
+	
+
+function die(){
+	alert("FINAL SCORE: " + totalScore);
+	newGame();
+}
+
 function newGame(){
-	snakeX = 36;
-	snakeY = 36;
-	foodX = 110 + (Math.floor((Math.random()*50))*10);
-	foodY = 110 + (Math.floor((Math.random()*50))*10);
-	foodScore = 1000;
+	snake.posx = 36;
+	snake.posy = 36;
+	food.newPosition();
+	food.pointValue = 1000;
 	totalScore = 0;
-	speedMod = 1;
-	xSpeed = 0;
-	ySpeed = 0.1;
+	snake.speedMod = 1;
+	snake.xSpeed = 0;
+	snake.ySpeed = 0.1;
 	run = false;
+}
+
+function eatFood(){
+	food.newPosition();
+	snake.speedMod += 0.1;
+	totalScore += food.pointValue;
+	food.pointValue = 1000;}
 }
