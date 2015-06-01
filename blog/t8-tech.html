@@ -33,7 +33,7 @@
     </div>
 
     <div class="title">
-      <h1></h1>					<!--ADD TITLE-->
+      <h1>Injection 2: The SQL</h1>					<!--ADD TITLE-->
       <h2>Technical Blog - Week 8</h2>		<!--ADD SUBTITLE-->
     </div>
 
@@ -42,14 +42,45 @@
     <div class="post">
 
       <p>
-         
-										<!--ADD CONTENT-->
-
+         SQL injection is a code injection attack used to coerce databases to dump their contents to the attacker. One of the most common ways to accomplish this is by exploiting poorly secured user input using escape characters. Consider the following:
       </p>
       <p>
-         <a href="#">CONTINUE READING</a> <!--ADD LINK-->
+        <b>statement = "SELECT * FROM users WHERE name ='" + userName + "';"</b>
       </p>
-
+      <p>
+        The user is asked from their userName, which then gets inserted into the code and checked against the database:
+      </p>
+      <p>
+        <b>statement = "SELECT * FROM users WHERE name ='" + Jacob + "';"</b>
+      </p>
+      <p>
+      This would collapse the variable statement to:
+      </p>
+      <p>
+        <b>statement = "SELECT * FROM users WHERE name ='Jacob';</b>
+      </p>
+      <p>
+        This code checks the users database, and when the statement name='Jacob' returns true it returns that entry. But what would happen if instead of Jacob, we gave our name as:
+      </p>
+      <p>
+        <b>' OR '1'='1</b>
+      </p>
+      <p>
+      Well, let's see what our query looks like with that inserted.
+      </p>
+      <p>
+        <b>statement = "SELECT * FROM users WHERE name ='" + ' OR '1'='1 + "';"</b>
+      </p>
+      <p>
+        This collapses down to:
+      </p>
+      <p>
+        <b>statement = "SELECT * FROM users WHERE name ='' OR '1'='1';</b>
+      </p>
+      <p>
+        What does this mean? It means the code checks the users database like before, but now the statement it runs to check the userName reads name='' OR '1'='1'. Well, 1 ALWAYS = 1, so as it checks the entries in the users database it starts returning EVERY ENTRY. The insertion of escape characters ('') in the user input allows us to exit out of the programmed function and inject our own expression, allowing us to hijack the program. This is why it is extremely important to filter user inputs to reject things like escape characters.
+      </p>
+      
     </div>
 
   </div>
