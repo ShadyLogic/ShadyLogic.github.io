@@ -125,7 +125,7 @@
 <!-- NEW BLOG POSTS END HERE -->
 <!-- NEW BLOG POSTS START HERE -->
 
-  <div class="main">
+  <div class="main" id='divzalgo'>
 
     <div>
       <img src="../imgs/mug-avatarZalgo.png" alt="My beautiful zalgo">
@@ -141,7 +141,7 @@
 
     <div class="post">
 
-      <p id="zalgo">
+      <p id="textzalgo">
         There was no cultural blog assigned this week, so I made a tribute to Zalgo instead. I used a zalgo generator to make the text for the title and link, and wrote a JavaScript function to scramble the paragraph text. I was going for a cool "corrupted file" look.
       </p>
 
@@ -196,11 +196,13 @@
 </html>
 
 <script>
+  var text = document.getElementById('textzalgo');
+  var div = document.getElementById('divzalgo')
+
   function scramble(){
-    var text = document.getElementById('zalgo');
-    var oldText = text.textContent;
-    var shuffled = oldText.split('').sort(function(){return 0.5-Math.random()}).join('');
-    text.textContent = shuffled;
+    text.textContent = text.textContent.split('').sort(function(){return 0.5-Math.random()}).join('');
+    var rand1 = Math.random()*3, rand2 = Math.random()*3, rand3 = Math.random()*3;
+    div.style.boxShadow = rand1 + "px " + rand2 + "px " + rand3 + "px";
     requestAnimationFrame(scramble);
 
 }

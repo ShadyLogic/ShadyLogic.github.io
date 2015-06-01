@@ -33,7 +33,7 @@
     </div>
 
     <div class="title">
-      <h1></h1>					<!--ADD TITLE-->
+      <h1>Jumping Through Loops</h1>					<!--ADD TITLE-->
       <h2>Technical Blog - Week 7</h2>		<!--ADD SUBTITLE-->
     </div>
 
@@ -42,12 +42,19 @@
     <div class="post">
 
       <p>
-         
-										<!--ADD CONTENT-->
-
+        We've been learning JavaScript this week, and there are some immediately noticeable difference between JS and Ruby. To start with, arrays are not nearly as easy to work with in JS. Using Ruby we can take an array and iterate through the elements with the .each method. JavaScript has no built in iteration method, so we are required to build our own with a for loop. One way to do this would be the notation:
       </p>
       <p>
-         <a href="#">CONTINUE READING</a> <!--ADD LINK-->
+        for (var i in array) {};
+      </p>
+      <p>
+      Where i would be the current index number of the array and our block goes inside the braces. This is used in a manner similar to Ruby's .each_index method. The for loop in JS can also be used to iterate through object properties, which are very similar to Ruby's Hash object. Using the same notation:
+      </p>
+      <p>
+        for (var property in object) {};
+      </p>
+      <p>
+        We can run a block for each property in the object. An important note here is that the variable "property" will contain only the name of the object property, not the property itself. This means that in order to read the value we still need to refer to the property as object[property].
       </p>
 
     </div>
