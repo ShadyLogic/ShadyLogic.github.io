@@ -1,0 +1,31 @@
+.method_name {
+	position: relative;
+	width: 100px;
+	margin: auto;
+}
+
+.method_info  {
+	position: relative;
+	width: 500px;
+	margin: auto;
+}
+
+h1 {
+	margin:auto;
+	text-align: center;
+	width: 350px;
+	box-shadow: 2px 2px 2px;
+}
+
+h3 {
+	position: relative;
+	padding-right: .5em;
+	text-align: right;
+	right: 220px;
+	box-shadow: 2px 2px 2px;
+}
+
+p {
+	position: relative;
+	margin-left: 100px;
+}

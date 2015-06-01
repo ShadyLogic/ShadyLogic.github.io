@@ -39,6 +39,14 @@ p{
 	position: absolute;
 }
 
+#tail {
+	background-color: green;
+	top: -50px;
+	width: 10px;
+	height: 10px;
+	position: absolute;
+}
+
 .wall {
 	background-color: white;
 	width: 500px;
